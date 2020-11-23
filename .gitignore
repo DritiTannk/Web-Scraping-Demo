@@ -4,4 +4,12 @@ __pycache__/
 
 *.py[cod]
 
+/.vagrant
+/scrapy.iml
+.cache/
+htmlcov/
+.coverage
+.pytest_cache/
+.coverage.*
+
 Pipfile.lock
