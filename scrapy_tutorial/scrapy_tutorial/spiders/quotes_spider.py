@@ -25,3 +25,4 @@ class QuotesSpider(scrapy.Spider):
             next_page = response.urljoin(next_page)  # Creates a new url by appending the page number.
             yield scrapy.Request(next_page, callback=self.parse)
 
+    
