@@ -20,7 +20,10 @@ class TagsSpider(scrapy.Spider):
             tags = quote.css("div.tags a.tag::text").getall()  # Extracts tags associated with it
             page_no = response.url.split('/')[-2]  # Extracts page number
             searched_tag = response.url.split('/')[-4]  # Extracts tag name from url for which quotes have been searched
+            stats = self.crawler.stats.get_stats()  # returns all statistic details about the crawler
+            start_time = stats['start_time']
             yield {
+                'crawler_start_time':  start_time.replace(microsend=0),
                 'text': text,
                 'author': author,
                 'tags': tags,
